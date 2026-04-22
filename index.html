@@ -300,6 +300,117 @@
 
     .projects-section { background: var(--navy-900); }
 
+    .discovery-section {
+      background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-800) 50%, var(--navy-900) 100%);
+    }
+
+    .discovery-block {
+      margin-bottom: 2.5rem;
+    }
+    .discovery-block p {
+      color: var(--slate-200);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    .discovery-heading {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+    }
+
+    .discovery-photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+    .photo-card {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--navy-600);
+      background: var(--navy-800);
+    }
+    .photo-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .photo-caption {
+      display: block;
+      padding: 0.75rem 1rem;
+      font-size: 0.78rem;
+      color: var(--slate-300);
+      text-align: center;
+    }
+
+    .data-table-wrapper {
+      overflow-x: auto;
+      margin-bottom: 1rem;
+    }
+    .data-table-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .data-table th {
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent);
+      font-weight: 600;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border-bottom: 2px solid rgba(56, 189, 248, 0.2);
+      white-space: nowrap;
+    }
+    .data-table td {
+      padding: 0.65rem 1rem;
+      color: var(--slate-200);
+      border-bottom: 1px solid var(--navy-600);
+    }
+    .data-table tbody tr:hover {
+      background: rgba(56, 189, 248, 0.04);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .skill-card {
+      background: rgba(20, 45, 74, 0.5);
+      border: 1px solid rgba(56, 189, 248, 0.1);
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .skill-card:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+      transform: translateY(-3px);
+    }
+    .skill-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+    .skill-card h4 {
+      font-family: var(--font-display);
+      color: var(--white);
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+    .skill-card p {
+      color: var(--slate-300);
+      font-size: 0.82rem;
+      line-height: 1.6;
+    }
+
     .project-card {
       background: var(--navy-800);
       border: 1px solid var(--navy-600);
@@ -434,6 +545,8 @@
       .about-photo { max-width: 220px; }
       .about-details { grid-template-columns: 1fr; }
       .resume-body iframe { height: 500px; }
+      .discovery-photos { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -448,6 +561,7 @@
         <li><a href="#resume">Resume</a></li>
         <li><a href="#goals">Goals</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#discovery">Discovery</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -474,7 +588,7 @@
           <p>Degree</p>
         </div>
         <div class="stat-item">
-          <h3>3+</h3>
+          <h3>4+</h3>
           <p>Projects</p>
         </div>
         <div class="stat-item">
@@ -649,6 +763,187 @@
             <span class="tech-tag">Multithreading</span>
           </div>
         </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Discovery Project -->
+  <section class="discovery-section" id="discovery">
+    <div class="container">
+      <div class="section-label reveal">ECE 1100 Discovery Project</div>
+      <h2 class="section-title reveal">Precision Sensing with the Wheatstone Bridge</h2>
+
+      <!-- Discovery Project Idea -->
+      <div class="discovery-block reveal">
+        <h3 class="discovery-heading">Project Idea</h3>
+        <p>
+          For my Discovery Project, I chose to design, build, and test a Wheatstone bridge sensor circuit using a photoresistor (LDR) as the sensing element. The goal was to move from the theoretical derivation of the bridge output voltage to a working circuit on a breadboard, then improve the circuit by adding an LM741 op amp buffer to demonstrate the difference between passive and active measurement systems. I chose this project because it ties directly into core ECE concepts such as voltage division, nodal analysis, op amp behavior, and real world sensor interfacing, all of which are fundamental to the Systems &amp; Architecture thread I am pursuing.
+        </p>
+      </div>
+
+      <!-- Project Progress -->
+      <div class="discovery-block reveal">
+        <h3 class="discovery-heading">Project Progress</h3>
+        <p>
+          The project started with theoretical analysis. I derived the output voltage formula Vout = Vs &times; [R2/(R1+R2) &minus; R4/(R3+R4)] using both nodal analysis and voltage division, confirming both methods yield the same result. I then learned what it means for the bridge to be "balanced" (Vout = 0 when R1&times;R4 = R2&times;R3).
+        </p>
+        <p>
+          Next came the hands on build. I selected a photoresistor as my variable sensor and measured its nominal resistance under room lighting at approximately 620&Omega;. I paired it with three 680&Omega; fixed resistors for the remaining bridge legs, powered the circuit at 5V DC from a Keithley 2281S precision supply, and measured Vout using a Keithley DMM6500 6&frac12; digit multimeter. The bridge achieved near balance with only a small baseline offset.
+        </p>
+        <p>
+          After collecting passive bridge data across three lighting conditions (flashlight, ambient, and fully covered), I modified the circuit by adding an LM741 op amp configured as a unity gain buffer. I then repeated all measurements and performed a load test by connecting a 680&Omega; load resistor to compare how each configuration handled real world loading.
+        </p>
+      </div>
+
+      <!-- Lab Photos -->
+      <div class="discovery-photos reveal">
+        <div class="photo-card">
+          <img src="breadboard.jpeg" alt="Breadboard circuit closeup">
+          <span class="photo-caption">Wheatstone bridge with LM741 buffer on breadboard</span>
+        </div>
+        <div class="photo-card">
+          <img src="lab-setup.jpeg" alt="Full lab setup">
+          <span class="photo-caption">Full lab setup: Keithley DMM6500 and 2281S DC supply</span>
+        </div>
+        <div class="photo-card">
+          <img src="measurement.jpeg" alt="Taking measurement">
+          <span class="photo-caption">Measuring Vout during load test</span>
+        </div>
+      </div>
+
+      <!-- Data Tables -->
+      <div class="discovery-block reveal">
+        <h3 class="discovery-heading">Experimental Data</h3>
+        <p style="margin-bottom: 1rem; color: var(--slate-300); font-size: 0.85rem;">Circuit: 5V DC supply, R1 = R3 = R4 = 680&Omega;, R2 = Photoresistor (LDR)</p>
+
+        <h4 class="data-table-title">Passive Bridge Measurements</h4>
+        <div class="data-table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Condition</th>
+                <th>LDR Resistance</th>
+                <th>Calculated Vout</th>
+                <th>Measured Vout</th>
+                <th>% Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Flashlight</td>
+                <td>24.5 &Omega;</td>
+                <td>&minus;2.33 V</td>
+                <td>&minus;2.32 V</td>
+                <td>0.4%</td>
+              </tr>
+              <tr>
+                <td>Room Light</td>
+                <td>620 &Omega;</td>
+                <td>&minus;115 mV</td>
+                <td>&minus;75 mV</td>
+                <td>34.8%</td>
+              </tr>
+              <tr>
+                <td>Fully Covered</td>
+                <td>3.52 k&Omega;</td>
+                <td>+1.69 V</td>
+                <td>+1.60 V</td>
+                <td>5.3%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 class="data-table-title" style="margin-top: 2rem;">Load Test Comparison (680&Omega; Load, Dark Condition)</h4>
+        <div class="data-table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Circuit</th>
+                <th>No Load</th>
+                <th>With 680&Omega; Load</th>
+                <th>Voltage Drop</th>
+                <th>Signal Loss</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Passive Bridge</td>
+                <td>+1.60 V</td>
+                <td>&minus;0.24 V</td>
+                <td>1.84 V</td>
+                <td>&gt;100% (Inverted)</td>
+              </tr>
+              <tr>
+                <td>Active (LM741 Buffer)</td>
+                <td>+1.70 V</td>
+                <td>+1.48 V</td>
+                <td>0.22 V</td>
+                <td>12.9%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Successes and Failures -->
+      <div class="discovery-block reveal">
+        <h3 class="discovery-heading">Successes and Failures</h3>
+        <p>
+          <strong style="color: var(--accent);">Successes:</strong> The measured data closely matched the theoretical predictions. The flashlight condition matched within 0.4% error, and the load test clearly demonstrated the advantage of the buffered circuit (0.22V drop vs. 1.84V drop). The bridge responded with a total swing of nearly 4V across the tested lighting range, showing excellent sensitivity.
+        </p>
+        <p>
+          <strong style="color: var(--gold);">Challenges:</strong> Choosing the right fixed resistors was a significant hurdle. My initial attempt used 10k&Omega; resistors, but the LDR was reading only 800&Omega; in room light, creating a massive imbalance. I then tried 3.6k&Omega; resistors, which were better but still produced a large offset. It was not until I found 680&Omega; resistors that the bridge achieved near balance. Another challenge was the single supply limitation of the LM741. Without a negative voltage rail, the op amp clipped any negative output voltages near 0V, meaning the buffer could only accurately reproduce the positive (dark) portion of the signal. In a professional design, this would be solved with a dual supply or a rail to rail op amp.
+        </p>
+      </div>
+
+      <!-- ECE Skills Gained -->
+      <div class="discovery-block reveal">
+        <h3 class="discovery-heading">ECE Skills Gained</h3>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon">&#9889;</div>
+            <h4>Circuit Analysis</h4>
+            <p>Applied voltage division and nodal analysis (KCL) to derive the Wheatstone bridge output equation and predict circuit behavior.</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">&#128295;</div>
+            <h4>Breadboard Prototyping</h4>
+            <p>Built and debugged a multi component circuit on a breadboard, learning proper component placement and wiring practices.</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">&#128200;</div>
+            <h4>Precision Measurement</h4>
+            <p>Operated a Keithley DMM6500 6&frac12; digit multimeter and Keithley 2281S DC supply for high accuracy voltage and resistance measurements.</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">&#9878;</div>
+            <h4>Op Amp Applications</h4>
+            <p>Configured an LM741 as a unity gain buffer to isolate the bridge from loading effects, understanding input impedance and signal conditioning.</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">&#128270;</div>
+            <h4>Error Analysis</h4>
+            <p>Identified and documented sources of error including component tolerances, breadboard parasitics, LDR drift, and single supply clipping.</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">&#128218;</div>
+            <h4>Technical Documentation</h4>
+            <p>Produced a full lab report with derivations, data tables, percent error calculations, and analysis of passive vs. active circuit performance.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Final Thoughts -->
+      <div class="discovery-block reveal">
+        <h3 class="discovery-heading">Final Thoughts</h3>
+        <p>
+          This project gave me a deeper appreciation for how simple circuit topologies can be incredibly powerful when applied correctly. The Wheatstone bridge is over 180 years old, yet it remains the foundation of modern sensors in medical devices, automotive systems, and structural monitoring. Building the circuit and seeing theory match reality (the flashlight reading of &minus;2.32V vs. the calculated &minus;2.33V) was one of the most satisfying moments I have had in my engineering coursework.
+        </p>
+        <p>
+          The most valuable lesson was understanding why active signal conditioning matters. Watching the passive bridge completely collapse under a 680&Omega; load (from +1.6V to &minus;0.24V) while the buffered version held steady made the concept of loading tangible rather than just theoretical. Going forward, I want to explore using an instrumentation amplifier instead of a simple buffer, adding gain to amplify small signals, and potentially integrating the output with a microcontroller for automated data collection. This project has reinforced my interest in the hardware side of engineering and the Computing Hardware &amp; Emerging Architectures thread.
+        </p>
       </div>
 
     </div>
